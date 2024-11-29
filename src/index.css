@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #34d399 0%, #059669 100%);
+  --secondary-gradient: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+}
+
+body {
+  background-color: #f8fafc;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent;
+  background-image: var(--primary-gradient);
+}
+
+.gradient-bg {
+  background-image: var(--primary-gradient);
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* Common UI Components */
+.btn-primary {
+  @apply flex justify-center items-center px-6 py-3 rounded-xl font-medium text-white shadow-sm transition-all duration-300;
+  background-image: var(--primary-gradient);
+}
+
+.btn-primary:hover {
+  @apply shadow-md -translate-y-0.5;
+  filter: brightness(1.1);
+}
+
+.btn-secondary {
+  @apply flex justify-center items-center px-6 py-3 rounded-xl font-medium text-white shadow-sm transition-all duration-300;
+  background-image: var(--secondary-gradient);
+}
+
+.btn-secondary:hover {
+  @apply shadow-md -translate-y-0.5;
+  filter: brightness(1.1);
+}
+
+.input-primary {
+  @apply w-full px-4 py-3 rounded-xl border border-gray-200 shadow-sm transition-all duration-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+}
+
+.card-primary {
+  @apply bg-white rounded-2xl shadow-sm p-6 transition-all duration-300 hover:shadow-lg;
+}
+
+.section-title {
+  @apply text-2xl font-bold gradient-text mb-6;
+}
+
+/* Job Description Styles */
+.job-description {
+  @apply text-gray-700 space-y-6 leading-relaxed;
+}
+
+/* Headings */
+.job-description h1 {
+  @apply text-3xl font-bold text-gray-900 mt-12 mb-8;
+  background: linear-gradient(to right, theme('colors.primary.800'), theme('colors.primary.700'));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.job-description h2 {
+  @apply text-2xl font-bold text-gray-900 mt-10 mb-6;
+  background: linear-gradient(to right, theme('colors.primary.700'), theme('colors.primary.600'));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.job-description h3 {
+  @apply text-xl font-semibold text-gray-900 mt-8 mb-4;
+  background: linear-gradient(to right, theme('colors.primary.600'), theme('colors.primary.500'));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.job-description h4 {
+  @apply text-lg font-semibold text-gray-900 mt-6 mb-3;
+  background: linear-gradient(to right, theme('colors.primary.500'), theme('colors.primary.400'));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.job-description h5 {
+  @apply text-base font-semibold text-gray-900 mt-4 mb-2;
+  background: linear-gradient(to right, theme('colors.primary.400'), theme('colors.primary.300'));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.job-description h6 {
+  @apply text-sm font-semibold text-gray-900 mt-4 mb-2;
+  background: linear-gradient(to right, theme('colors.primary.300'), theme('colors.primary.200'));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.job-description h1:first-child,
+.job-description h2:first-child,
+.job-description h3:first-child,
+.job-description h4:first-child,
+.job-description h5:first-child,
+.job-description h6:first-child {
+  @apply mt-0;
+}
+
+/* Text Formatting */
+.job-description p {
+  @apply text-base leading-relaxed mb-4 text-gray-700;
+}
+
+.job-description b,
+.job-description strong {
+  @apply font-semibold text-gray-900;
+}
+
+.job-description i,
+.job-description em {
+  @apply italic text-gray-800;
+}
+
+.job-description u {
+  @apply underline decoration-2 decoration-primary-200 underline-offset-2;
+}
+
+.job-description strike,
+.job-description del {
+  @apply line-through text-gray-500;
+}
+
+.job-description small {
+  @apply text-sm text-gray-600;
+}
+
+.job-description mark {
+  @apply bg-primary-100 text-primary-900 px-1 rounded;
+}
+
+.job-description sub {
+  @apply align-sub text-sm;
+}
+
+.job-description sup {
+  @apply align-super text-sm;
+}
+
+/* Lists */
+.job-description ul {
+  @apply space-y-3 my-4 ml-6;
+}
+
+.job-description ul li {
+  @apply relative pl-6 text-gray-700;
+}
+
+.job-description ul li::before {
+  content: "";
+  @apply absolute left-0 top-2.5 w-2 h-2 rounded-full;
+  background-image: var(--primary-gradient);
+}
+
+.job-description ol {
+  @apply space-y-3 my-4 ml-6 list-decimal;
+}
+
+.job-description ol li {
+  @apply pl-2 text-gray-700 marker:text-primary-500 marker:font-semibold;
+}
+
+/* Links */
+.job-description a {
+  @apply text-primary-600 hover:text-primary-700 underline decoration-2 decoration-primary-200 underline-offset-2 transition-colors;
+}
+
+/* Blockquotes */
+.job-description blockquote {
+  @apply pl-4 border-l-4 border-primary-500 text-gray-600 italic my-6 py-2;
+}
+
+/* Horizontal Rule */
+.job-description hr {
+  @apply my-8 border-gray-200;
+}
+
+/* Tables */
+.job-description table {
+  @apply w-full my-6 border-collapse;
+}
+
+.job-description th {
+  @apply px-4 py-2 bg-gray-50 border border-gray-200 text-left text-sm font-semibold text-gray-700;
+}
+
+.job-description td {
+  @apply px-4 py-2 border border-gray-200 text-sm text-gray-700;
+}
+
+/* Code */
+.job-description code {
+  @apply px-2 py-1 bg-gray-100 rounded text-sm text-primary-700 font-mono;
+}
+
+.job-description pre {
+  @apply p-4 bg-gray-800 rounded-lg overflow-x-auto text-sm text-white font-mono my-6;
+}
+
+/* Images */
+.job-description img {
+  @apply rounded-lg shadow-md max-w-full my-6;
+}
+
+.job-description figure {
+  @apply my-6;
+}
+
+.job-description figcaption {
+  @apply mt-2 text-sm text-gray-500 text-center;
+}
+
+/* Definition Lists */
+.job-description dl {
+  @apply my-6;
+}
+
+.job-description dt {
+  @apply font-semibold text-gray-900 mt-4;
+}
+
+.job-description dd {
+  @apply ml-4 text-gray-700;
+}
+
+/* Abbreviations */
+.job-description abbr {
+  @apply cursor-help border-b-2 border-dotted border-gray-400;
+}
+
+/* Text Selection */
+.job-description ::selection {
+  @apply bg-primary-100 text-primary-900;
+}
